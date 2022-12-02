@@ -3,6 +3,7 @@
     "name": "onebitlife",
     "slug": "onebitlife",
     "version": "1.0.0",
+    "userInterfaceStyle": "dark",
     "assetBundlePatterns": [
       "**/*"
     ]
