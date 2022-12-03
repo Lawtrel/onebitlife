@@ -6,9 +6,10 @@ import DefaultButton from "../../components/DefaultButton";
 import LifeStatus from "../../components/LifeStatus";
 
 export default function Start(){
+    const navigation = useNavigation();
 
     const handleNavAppExplanation = () => {
-        console.log("Clickou");
+       navigation.navigate("AppEX");
     };
     
     return(
