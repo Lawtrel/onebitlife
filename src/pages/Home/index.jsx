@@ -3,6 +3,7 @@ import React, { useEffect, useState} from "react";
 import { View, Text, StyleSheet, ScrollView} from "react-native";
 import LifeStatus from "../../components/LifeStatus";
 import StatusBar from "../Home/StatusBar";
+import CreateHabit from "./CreateHabit";
 
 export default function Home() {
     const navigation = useNavigation();
@@ -21,6 +22,10 @@ export default function Home() {
                 <Text style={styles.dailyChecks}>❤️ 20 dias - ✔️ 80 checks</Text>
                 <LifeStatus/>
                 <StatusBar/>
+                <CreateHabit habitArea= "Mente" borderColor= "#90B7F3" />
+                <CreateHabit habitArea= "Dinheiro" borderColor= "#85BB65" />
+                <CreateHabit habitArea= "Corpo" borderColor= "#FF0043" />
+                <CreateHabit habitArea= "Diversão" borderColor= "#FE7F23" />
             </View>
             <Text
                 style={styles.explanationText}
