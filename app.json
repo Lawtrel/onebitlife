@@ -6,6 +6,9 @@
     "userInterfaceStyle": "dark",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.lawtrel.onebitcode"
+    }
   }
 }

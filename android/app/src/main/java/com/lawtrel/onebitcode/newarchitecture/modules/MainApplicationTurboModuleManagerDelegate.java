@@ -1,4 +1,4 @@
-package com.onebitlife.newarchitecture.modules;
+package com.lawtrel.onebitcode.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

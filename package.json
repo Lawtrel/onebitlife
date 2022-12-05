@@ -15,9 +15,11 @@
     "expo": "~47.0.8",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
+    "expo-system-ui": "^2.0.1",
     "lottie-react-native": "^5.1.4",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-paper": "^5.0.0-rc.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

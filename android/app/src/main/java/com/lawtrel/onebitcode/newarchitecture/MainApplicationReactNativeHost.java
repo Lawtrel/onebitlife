@@ -1,4 +1,4 @@
-package com.onebitlife.newarchitecture;
+package com.lawtrel.onebitcode.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.onebitlife.BuildConfig;
-import com.onebitlife.newarchitecture.components.MainComponentsRegistry;
-import com.onebitlife.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.lawtrel.onebitcode.BuildConfig;
+import com.lawtrel.onebitcode.newarchitecture.components.MainComponentsRegistry;
+import com.lawtrel.onebitcode.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

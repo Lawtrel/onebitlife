@@ -1,4 +1,4 @@
-package com.onebitlife;
+package com.lawtrel.onebitcode;
 
 import android.os.Build;
 import android.os.Bundle;

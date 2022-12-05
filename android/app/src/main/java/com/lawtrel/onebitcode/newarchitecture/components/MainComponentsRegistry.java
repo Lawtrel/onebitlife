@@ -1,4 +1,4 @@
-package com.onebitlife.newarchitecture.components;
+package com.lawtrel.onebitcode.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
