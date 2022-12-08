@@ -1,13 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import LifeStatus from "../components/lifestatus";
 import DefaultButton from "../components/defaultbutton";
 
-export default function Start(){
+export default function Start() {
+    const navigation = useNavigation();
 
     const handleNavAppExplanation = () => {
-        console.log("Click");
+        navigation.navigate("AppExplication");;
     };
 
     return (
