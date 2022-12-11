@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import LifeStatus from "../components/lifestatus";
 import DefaultButton from "../components/defaultbutton";
+import LifeStatus from "../components/lifestatus";
 
 export default function Start() {
     const navigation = useNavigation();

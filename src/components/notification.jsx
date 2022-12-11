@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { StyleSheet, Switch } from "react-native";
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 
 export default function Notification({
   notificationToggle,
