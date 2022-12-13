@@ -37,6 +37,8 @@ export default function Home({ route}) {
       });
     }
 
+    const excludeArea = route.params?.excludeArea;
+
     useEffect(() => {
       HabitsService.findByArea("Mente").then((mind) => {
         setMindHabit(mind[0]);
@@ -70,37 +72,39 @@ export default function Home({ route}) {
       .then((showHome) => {
         const month = `${today.getMonth() + 1}`.padStart(2, "0");
         const day = `${today.getDate()}`.padStart(2, "0");
-        const formDate = `${today.getFullYear()}-${month}-${day}`
+        const formDate = `${today.getFullYear()}-${month}-${day}`;
         const checkDays =
           new Date(formDate) - new Date(showHome.appStartData) + 1;
-        
+
         if (checkDays === 0) {
-        setRobotDaysLife(checkDays.toString().padStart(2, "0"));
-      } else {
-        setRobotDaysLife(parseInt(checkDays / (1000 * 3600 * 24)));
-      }
+          setRobotDaysLife(checkDays.toString().padStart(2, "0"));
+        } else {
+          setRobotDaysLife(parseInt(checkDays / (1000 * 3600 * 24)));
+        }
       })
       .catch((err) => console.log(err));
-    }, [route.params]);
+  }, [route.params]);
 
-    useEffect(() => {
-      CheckService.removeCheck(mindHabit, moneyHabit, bodyHabit, funHabit);
-      CheckService.checkStatus(mindHabit, moneyHabit, bodyHabit, funHabit);
-      const mindChecks = mindHabit ? mindHabit?.habitChecks : 0;
-      const moneyChecks = moneyHabit ? moneyHabit?.habitChecks : 0;
-      const bodyChecks = bodyHabit ? bodyHabit?.habitChecks : 0;
-      const funChecks = funHabit ? funHabit?.habitChecks : 0;
-      setChecks(mindChecks + moneyChecks + bodyChecks + funChecks);
-      if (
-        mindHabit?.progressBar === 0 ||
-        moneyHabit?.progressBar === 0 ||
-        bodyHabit?.progressBar === 0 ||
-        funHabit?.progressBar === 0
-      ) {
-        setGameOver(true);
-      }
-    }, [mindHabit, moneyHabit, bodyHabit, funHabit]);
-    
+
+  useEffect(() => {
+    CheckService.removeCheck(mindHabit, moneyHabit, bodyHabit, funHabit);
+    CheckService.checkStatus(mindHabit, moneyHabit, bodyHabit, funHabit);
+    const mindChecks = mindHabit ? mindHabit?.habitChecks : 0;
+    const moneyChecks = moneyHabit ? moneyHabit?.habitChecks : 0;
+    const bodyChecks = bodyHabit ? bodyHabit?.habitChecks : 0;
+    const funChecks = funHabit ? funHabit?.habitChecks : 0;
+    setChecks(mindChecks + moneyChecks + bodyChecks + funChecks);
+    if (
+      mindHabit?.progressBar === 0 ||
+      moneyHabit?.progressBar === 0 ||
+      bodyHabit?.progressBar === 0 ||
+      funHabit?.progressBar === 0
+    ) {
+      setGameOver(true);
+    }
+  }, [mindHabit, moneyHabit, bodyHabit, funHabit]);
+
+
 	return (
         <View style={styles.container}>
           <ScrollView>
@@ -112,7 +116,12 @@ export default function Home({ route}) {
               ) : (
                 <Text style={styles.gameOverTitle}>Game Over</Text>
               )}
-              <LifeStatus/>
+              <LifeStatus
+                mindHabit={mindHabit}
+                moneyHabit={moneyHabit}
+                bodyHabit={bodyHabit}
+                funHabit={funHabit}
+              />
               <StatusBar
                 mindHabit={mindHabit?.progressBar}
                 moneyHabit={moneyHabit?.progressBar}

@@ -2,13 +2,13 @@ import React from "react";
 import { View, StyleSheet, Image} from "react-native";
 import { ProgressBar} from "react-native-paper";
 
-export default function StatusBar( mindHabit, moneyHabit, bodyHabit, funHabit,){
+export default function StatusBar({ mindHabit, moneyHabit, bodyHabit, funHabit,}) {
     return (
-<View style={styles.container}>
-      <View style={styles.statusBarContainer}>
-        <Image
-          source={require("../assets/icons/educationIcon.png")}
-          style={styles.icon}
+      <View style={styles.container}>
+        <View style={styles.statusBarContainer}>
+          <Image
+            source={require("../assets/icons/educationIcon.png")}
+            style={styles.icon}
         />
         <ProgressBar progress={mindHabit} color={"#90B7F3"} style={styles.progress} />
       </View>

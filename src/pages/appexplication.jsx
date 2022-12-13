@@ -1,35 +1,31 @@
+import React, { useState } from "react";
+import { View, Text, StyleSheet, ScrollView, } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import React, { useState} from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
 
-import ExplanationCard from "../components/explanationcard";
 import DefaultButton from "../components/defaultbutton";
+import ExplanationCard from "../components/explanationcard";
 import ChangeNavigationService from "../services/changenavigationservice";
 
 export default function AppExplanation() {
   const navigation = useNavigation();
   const [showHome, setShowHome] = useState("false");
   const startDate = new Date();
-  const month = `${startDate.getMonth() + 1}`.padStart(2, "0")
-  const day = `${startDate.getDate()}`.padStart(2, "0")
-  const appStartData = `${startDate.getFullYear()}-${month}-${day}`
+  const month = `${startDate.getMonth() + 1}`.padStart(2, "0");
+  const day = `${startDate.getDate()}`.padStart(2, "0");
+  const appStartData = `${startDate.getFullYear()}-${month}-${day}`;
 
-
-
-	function handleNavHome() {
+  function handleNavHome() {
     navigation.navigate("Home");
   }
 
-  function handleSetShow() {
-    if (showHome != "true") {
-      ChangeNavigationService.setShowHome([ showHome, appStartData])
-        .then(() => console.log(`Nice! ${showHome} ${appStartData}`))
+  function handleSetShowHome() {
+    if (showHome !== "true") {
+      ChangeNavigationService.setShowHome({ showHome: "true", appStartData })
+        .then(() => console.log(`Sucesso! ${showHome} ${appStartData}`))
         .catch((err) => console.log(err));
       setShowHome("true");
-
       handleNavHome();
     }
-    handleNavHome();
   }
 
   return (
@@ -39,7 +35,7 @@ export default function AppExplanation() {
           <Text style={styles.title}>
             Antes, deixa {"\n"} eu te explicar...
           </Text>
-          <ExplanationCard/>
+          <ExplanationCard />
           <Text style={styles.descriptionCta}>
             Pronto(a) para subir de nível na vida?
           </Text>
@@ -49,7 +45,7 @@ export default function AppExplanation() {
           </Text>
           <DefaultButton
             buttonText={"Continuar"}
-            handlePress={handleNavHome}
+            handlePress={handleSetShowHome}
             width={250}
             height={50}
           />

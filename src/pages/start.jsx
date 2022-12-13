@@ -9,7 +9,7 @@ export default function Start() {
     const navigation = useNavigation();
 
     const handleNavAppExplanation = () => {
-        navigation.navigate("AppExplication");;
+        navigation.navigate("AppExplication");
     };
 
     return (

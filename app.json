@@ -1,33 +1,26 @@
 {
   "expo": {
-    "name": "bitlife",
+    "name": "BitLife",
     "slug": "bitlife",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+    "orientation": "portrait",
+    "icon": "./src/assets/icons/logo1.png",
+    "extra": {
+      "eas": {
+        "projectId": "a17012b7-2304-4c60-ab8c-3bc9137ebb02"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.lawtrel.bitlife"
     }
+  },
+  "ios": {
+    "supportsTablet": true
+  },
+  "android": {
+    "package": "com.lawtrel.bitlife"
   }
 }

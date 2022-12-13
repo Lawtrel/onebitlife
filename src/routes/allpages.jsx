@@ -1,8 +1,9 @@
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Start from "../pages/start";
-import AppEX from "../pages/appEX";
+import AppExplication from "../pages/appexplication";
 import Home from "../pages/home";
 import HabitPage from "../pages/habitpage";
 
@@ -17,7 +18,7 @@ export default function AllPages(){
                 }}
             >
                 <Stack.Screen name="Start" component={Start} />
-                <Stack.Screen name="AppExplication" component={AppEX}/>
+                <Stack.Screen name="AppExplication" component={AppExplication}/>
                 <Stack.Screen name="Home" component={Home}/>
                 <Stack.Screen name="HabitPage" component={HabitPage}/>
             </Stack.Navigator>

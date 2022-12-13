@@ -22,6 +22,7 @@ const setShowHome = (obj) => {
           }
         },
         (_, error) => {
+          console.log("Reject 2");
           reject(error);
         }
       );

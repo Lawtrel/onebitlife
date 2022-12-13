@@ -2,26 +2,26 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import AppEX from "../pages/appEX";
+import Start from "../pages/start";
+import AppExplication from "../pages/appexplication";
 import Home from "../pages/home";
 import HabitPage from "../pages/habitpage";
-import Start from "../pages/start";
 
 const Stack = createNativeStackNavigator();
 
-export default function HomePage() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="HabitPage" component={HabitPage} />
-        <Stack.Screen name="AppExplanation" component={AppEX} />
-        <Stack.Screen name="Start" component={Start} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+export default function HomePage(){
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                    headerShow: false,
+                }}
+            >
+                <Stack.Screen name="Start" component={Start} />
+                <Stack.Screen name="AppExplication" component={AppExplication}/>
+                <Stack.Screen name="Home" component={Home}/>
+                <Stack.Screen name="HabitPage" component={HabitPage}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
